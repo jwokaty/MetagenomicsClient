@@ -11,12 +11,13 @@ jobs:
     - name: Checkout curatedMetagenomicData
       uses: actions/checkout@v2
 
-
     - name: Install dependencies and update
       run: |
+        echo cd ${GITHUB_WORKSPACE}
         cd ${GITHUB_WORKSPACE}
         pip3 install openapi-python-client
         openapi-python-client update --url https://cmgd-telemetry-whnnxetv4q-uc.a.run.app/openapi.json
+        echo $(ls -la) 
       shell: bash
 
     - name: Commit and Make Pull Request
