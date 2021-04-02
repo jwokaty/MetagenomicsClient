@@ -18,6 +18,7 @@ jobs:
         pip3 install openapi-python-client
         openapi-python-client update --url https://cmgd-telemetry-whnnxetv4q-uc.a.run.app/openapi.json
         echo $(ls -la) 
+        touch a_new_file_to_see_if_it_works.txt
       shell: bash
 
     - name: Commit and Make Pull Request
